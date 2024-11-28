@@ -1,0 +1,33 @@
+mutation Login($email: String!, $password: String!) {
+  login(email: $email, password: $password) {
+    accessToken
+    refreshToken
+    accessTokenExpiresIn
+    refreshTokenExpiresIn
+  }
+}
+
+mutation RefreshToken($refreshToken: String!) {
+  refreshTokens(refreshToken: $refreshToken) {
+    accessToken
+    refreshToken
+    accessTokenExpiresIn
+    refreshTokenExpiresIn
+  }
+}
+
+query getUserProfile {
+  getUserProfile {
+    id
+    email
+    type
+    isActive
+    isEmailConfirmed
+    emailConfirmedAt
+    deletedAt
+    createdAt
+    updatedAt
+    emailConfirmedAt
+    permissions
+  }
+}
